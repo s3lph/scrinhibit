@@ -11,9 +11,10 @@ SCRinhibit supports an additional battery profile, in which other processes can 
 ## What Screensavers are supported?
 Currently, the following screensavers are supported. To specify the screensaver, a three-letter-acronym is used, which stands before the screensaver name.
 
-- cin    cinnamon-screensaver
-- kde    KDE4 screensaver (may as well work for others)
-- gno    gnome-screensaver (may, too, work for others)
+- `cin`    cinnamon-screensaver
+- `kde`    KDE4 screensaver (may as well work for others)
+- `xsc`    xscreensaver
+- `gno`    gnome-screensaver (may, too, work for others)
 
 As a kind of "fallback", a call to `xdg-screensaver` is supported, which may work with some screensavers.
 
@@ -44,6 +45,7 @@ then only `someapp` will be compared to the blacklists, any arguments, directori
 - A screensaver (Who would have guessed?)
 - BASH (of course)
 - qdbus
+- wmctrl
 - probably some other stuff I installed and forgot about.
 
 ## Like it? Hate it? Want to make it better?
