@@ -22,7 +22,7 @@ Either I don't know of its existence or I haven't yet figured out how to communi
 
 #How do I start it?
 
-    scrinhibit -s <screensaver acronym> -i <interval in seconds> -c </path/to/blacklist/files>
+    scrinhibit.sh -s <screensaver acronym> -i <interval in seconds> -c </path/to/blacklist/files>
 
 The script will automatically daemonize itself. To run it in the foreground, use the `-d` switch. You may want to enable verbose output using the `-v` switch, too.
 
@@ -30,6 +30,8 @@ The script will automatically daemonize itself. To run it in the foreground, use
 There are at least two blacklists: `procblacklist.conf` and `fsblacklist.conf`, which have to be in the same directory (specifiable by `-c`). Each file contains process names, newline-separated. These names will be used to match against currently running processes, and the screensaver will be inhibited if a process entered in `procblacklist.conf` is running or a process entered in `fsblacklist.conf` is running a fullscreen X window.
 
 Additionaly, two more blacklists can be used: `battery_procblacklist.conf` and `battery_fsblacklist.conf`. These files will be considered instead of the two above if and only if both files are present and no AC adapter is attached.
+
+Have a look at the example .conf files.
 
 #May I contribute?
 Sure, as much as you like.
