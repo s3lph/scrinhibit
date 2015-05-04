@@ -290,6 +290,14 @@ if [[ $SI_VERBOSITY == 1 ]]; then
     echo -e "\nInterval: $SI_DELAY seconds\n"
 fi
 
+#Kill already existing instances
+procs=$(pgrep scrinhibit.sh)
+for p in $procs; do
+    if [[ $p != $$ ]]; then
+	kill $p
+    fi
+done
+
 #Start inhibition loop, daemonized or not
 if [[ $SI_DAEMONIZE -eq 1 ]]; then
     loop &> /dev/null&
