@@ -14,14 +14,14 @@ Currently, the following screensavers are supported. To specify the screensaver,
 - `cin`    cinnamon-screensaver
 - `kde`    KDE4 screensaver (may as well work for others)
 - `xsc`    xscreensaver
-- `gno`    gnome-screensaver (may, too, work for others)
+- `gno`    gnome-screensaver
 
-As a kind of "fallback", a call to `xdg-screensaver` is supported, which may work with some screensavers.
+As a kind of "fallback", a call to `xdg-screensaver` is supported with the acronym `xdg`, which may work with some screensavers. E.g. it works perfectly fine with Xfce's "Light Locker".
 
 ## Why is "my" screensaver not supported?
 Either I don't know of its existence or I haven't yet figured out how to communicate with it. If you know an unsupported screensaver, please be so nice and create a new feature request or pull request.
 
-#How do I start it?
+## How do I start it?
 
     scrinhibit.sh -s <screensaver acronym> -i <interval in seconds> -c </path/to/blacklist/files>
 
