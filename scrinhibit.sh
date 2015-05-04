@@ -144,6 +144,9 @@ function inhibit_screensaver() {
 	'kde')#KDE4 screensaver
 	    qdbus org.freedesktop.ScreenSaver /ScreenSaver SimulateUserActivity &> /dev/null
 	    ;;
+	'xsc')#xscreensaver
+	    xscreensaver-command -deactivate
+	    ;;
 	'gno')#gnome-screensaver
 	    qdbus org.gnome.ScreenSaver /org/gnome/ScreenSaver SimulateUserActivity &> /dev/null
 	    ;;
@@ -168,6 +171,12 @@ function check_scrsv_active() {
 	'kde')#KDE4 Screensaver
 	    if [[ "$(qdbus org.freedesktop.ScreenSaver /ScreenSaver GetActive)" = 'true' ]]; then
 		return 1
+	    fi
+	    return 0
+	    ;;
+	'xsc')#xscreensaver
+	    if [[ -n "$(xscreensaver-command -time | grep non-blanked)" ]]; then
+	    	return 1
 	    fi
 	    return 0
 	    ;;
