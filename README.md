@@ -46,6 +46,7 @@ then only `someapp` will be compared to the blacklists, any arguments, directori
 - BASH (of course)
 - qdbus
 - wmctrl
+- acpi
 - probably some other stuff I installed and forgot about.
 
 ## Like it? Hate it? Want to make it better?

@@ -238,7 +238,7 @@ function find_fullscreen() {
 #Check whether AC power is disconnected and both battery_blacklists exists
 #If yes, use battery profile, else not
 function check_ac() {
-    if [[ -n $(grep on-line /proc/acpi/ac_adapter/*/state) ]] || \
+    if [[ -z $(acpi -a | grep off-line) ]] || \
 	[[ ! -f $SI_DIR/battery_fsblacklist.conf ]] || \
 	[[ ! -f $SI_DIR/battery_procblacklist.conf ]]; then
 	SI_BATT_PREFIX=''
