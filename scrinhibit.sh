@@ -200,7 +200,7 @@ function check_scrsv_active() {
 #read each process name from 'ps x' and compare with procblacklist.conf
 function find_proc() {
     for p in $(ps x | awk '{print $5}' | sed -r 's/^.*\/(.*?)/\1/g' | sed '/^$/d'); do
-	proc=$(grep "$(echo $p)" $SI_DIR/${SI_BATT_PREFIX}procblacklist.conf)
+	proc=$(grep -e "$(echo $p)" $SI_DIR/${SI_BATT_PREFIX}procblacklist.conf)
 	if [[ -z $proc ]]; then
 	    continue;
 	fi
