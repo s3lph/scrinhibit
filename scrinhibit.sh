@@ -171,7 +171,7 @@ function check_scrsv_active() {
 	    ;;
 	'kde')#KDE4 Screensaver
 	    if [[ "$(qdbus org.freedesktop.ScreenSaver /ScreenSaver \
-	    	org.gnome.ScreenSaver.GetActive)" = 'true' ]]; then
+	    	org.freedesktop.ScreenSaver.GetActive)" = 'true' ]]; then
 		return 1
 	    fi
 	    return 0
